@@ -13,6 +13,8 @@ function palindrome(str){
     return true
 };
 
+
+
 console.log(palindrome("racecar"))
 console.log(palindrome("timer"))
 console.log(palindrome("ratsstar"))
