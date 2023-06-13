@@ -91,4 +91,21 @@ function addAnimalAges(petData){
     return cumulativeAnimalAges
 };
 
-console.log(addAnimalAges(petsOfOwners2));
+
+// Sort pet names in alphabetical order
+function sortByName(petData){
+
+        petData.sort(function (a, b) {
+            if (a.pet.name < b.pet.name) {
+              return -1;
+            }
+            if (a.pet.name > b.pet.name) {
+              return 1;
+            }
+            return 0;
+          });
+          return petData
+          
+    };
+
+console.log(sortByName(petsOfOwners2));
