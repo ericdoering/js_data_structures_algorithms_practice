@@ -69,12 +69,12 @@ function addAge(petData){
 // Find total added age of each animal
 
 let petsOfOwners2 = [
-    { owner : "Mike", pet: { animal: "dog", name: "Bradley", age: 7 }},
+    { owner : "Mike", pet: { animal: "dog", name: "Bradley", age: 12 }},
     { owner : "Lindsey", pet: { animal: "cat", name: "Sophia", age: 6 }},
     { owner : "Ron", pet: { animal: "bird", name: "Fay", age: 3 }},
     { owner : "Sarah", pet: { animal: "cat", name: "Mijo", age: 4 }},
     { owner : "Ryan", pet: { animal: "rabbit", name: "Rose", age: 4 }},
-    { owner : "Dave", pet: { animal: "dog", name: "Quinn", age: 5 }},
+    { owner : "Dave", pet: { animal: "dog", name: "Quinn", age: 8 }},
     { owner : "Michelle", pet: { animal: "dog", name: "Marco", age: 5 }}
 ];
 
@@ -108,4 +108,15 @@ function sortByName(petData){
           
     };
 
-console.log(sortByName(petsOfOwners2));
+function filterResults(petData, pet, age){
+    let filteredPetData = [];
+    for(let i = 0; i < petData.length; i++){
+        if(petData[i].pet.animal === pet && petData[i].pet.age >= age){
+            filteredPetData.push(petData[i])
+        }
+    }
+    return filteredPetData;
+};
+
+console.log(filterResults(petsOfOwners2, "dog", 7));
+console.log(filterResults(petsOfOwners2, "cat", 5));
