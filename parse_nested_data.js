@@ -118,5 +118,28 @@ function filterResults(petData, pet, age){
     return filteredPetData;
 };
 
-console.log(filterResults(petsOfOwners2, "dog", 7));
-console.log(filterResults(petsOfOwners2, "cat", 5));
+// Generate a new pet randomly 
+
+function generateNewPet(petData){
+    let ownerName = "Kara"
+    let age = Math.floor(Math.random() * 15) + 1 
+    let petString = "aep"
+
+    let petName = (petString) => {
+        let firstLetter = petString[Math.floor(Math.random() * petString.length)];
+        let secondLetter = petString[Math.floor(Math.random() * petString.length)];
+        let thirdLetter = petString[Math.floor(Math.random() * petString.length)];
+        let fourthLetter = petString[Math.floor(Math.random() * petString.length)];
+        
+        let finalName = firstLetter + secondLetter + thirdLetter + fourthLetter;
+        return finalName;
+      };
+    let generatedName = petName(petString);
+    let newPet = { owner : `${ownerName}`, pet: { animal: "dog", name: `${generatedName}`, age: age }}
+    
+    petData.push(newPet)
+    return petData
+};
+
+
+console.log(generateNewPet(petsOfOwners2))
